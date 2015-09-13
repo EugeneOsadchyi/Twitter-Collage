@@ -3,6 +3,8 @@ class TweetsController < ApplicationController
   end
 
   def load
+    @tweets = $twitter_client.user_timeline(params[:name])
+
     respond_to do |format|
       format.js
     end
