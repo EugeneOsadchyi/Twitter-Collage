@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root 'tweets#index'
 
+  get 'tweets' => 'tweets#load', as: :load_tweets
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

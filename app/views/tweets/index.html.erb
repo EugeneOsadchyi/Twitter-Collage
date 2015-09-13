@@ -1,0 +1,13 @@
+<div class="page-header">
+  <h2>Create your personal Tweet-Collage</h2>
+</div>
+
+<%= form_tag load_tweets_path, method: 'get', remote: true do %>
+  <div class="form-group">
+    <label for="user_name">Name</label>
+    <input type="text" id="user_name" name="name" class="form-control" placeholder="Name"/>
+    <%= submit_tag 'Get Tweets', class: "btn btn-primary", name: nil %>
+  </div>
+<% end %>
+
+<div id="tweets-list"></div>
