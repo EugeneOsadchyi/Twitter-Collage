@@ -1,4 +1,10 @@
 <div class="list-group">
-  <%= @tweets.each do |tweet| %>
+  <% @tweets.each do |tweet| %>
+    <%= link_to tweet.uri.to_s, class: 'list-group-item' do %>
+      <blockquote>
+        <p><%= tweet.full_text %></p>
+        <footer><%= tweet.created_at %></footer>
+      </blockquote>
+    <% end %>
   <% end %>
 </div>

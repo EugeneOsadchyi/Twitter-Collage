@@ -2,12 +2,21 @@
   <h2>Create your personal Tweet-Collage</h2>
 </div>
 
-<%= form_tag load_tweets_path, method: 'get', remote: true do %>
-  <div class="form-group">
-    <label for="user_name">Name</label>
-    <input type="text" id="user_name" name="name" class="form-control" placeholder="Name"/>
-    <%= submit_tag 'Get Tweets', class: "btn btn-primary", name: nil %>
+<div class="container">
+  <div class="row">
+    <%= form_tag load_tweets_path, class: "form-horizontal", method: 'get', remote: true do %>
+      <div class="form-group">
+        <label for="user_name" class="col-sm-1 control-label">Name</label>
+        <div class="col-sm-9">
+          <input type="text" id="user_name" name="name" class="form-control" placeholder="Name"/>
+        </div>
+        <div class="col-sm-2">
+          <%= submit_tag 'Get Tweets', class: "btn btn-primary", name: nil %>
+        </div>
+      </div>
+    <% end %>
   </div>
-<% end %>
-
-<div id="tweets-list"></div>
+  <div class="row">
+    <div id="tweets-list"></div>
+  </div>
+</div>
